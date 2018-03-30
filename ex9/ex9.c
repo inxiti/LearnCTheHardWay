@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
 	int numbers[4] = {0};
-	char name[4] = {'a'};
+	char name[4] = {'a'}; // this is far less common, for strings
 
 	// first, print them out raw
 	printf("numbers: %d %d %d %d\n",
@@ -47,8 +47,8 @@ int main(int argc, char *argv[]) {
 	// print the name like a string
 	printf("name: %s\n", name);
 
-	// another way to use name
-	char *another = "Zed";
+	// another way to use name, this is the preference for strings
+	char *another = "Zed";	// in c, a string is an array of chars
 
 	printf("another: %s\n", another);
 
@@ -57,6 +57,6 @@ int main(int argc, char *argv[]) {
 		another[1],
 		another[2],
 		another[3]);
-	
+
 	return 0;
 }
