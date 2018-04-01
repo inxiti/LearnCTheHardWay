@@ -1,7 +1,7 @@
 CFLAGS=-Wall -Wextra -Wpedantic -g
 
-all: file1
+all: ex12
 
 clean:
-	rm -f file1
-	rm -rf file1.dSYM
+	rm -f ex12
+	rm -rf ex12.dSYM
