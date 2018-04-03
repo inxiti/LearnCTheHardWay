@@ -16,7 +16,7 @@ def usage():
     """
     print("./genesis.py #\n")
     print("Creates a new folder, copies skeleton files into it, and modifies "
-          + "them accordingly.")
+          "them accordingly.")
 
 def create(number, files, directory, base_directory):
     """Creation.
