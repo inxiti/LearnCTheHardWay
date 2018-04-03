@@ -1,12 +1,29 @@
 #!/usr/bin/env python3
 
-import os, shutil, sys
+"""genesis Project Creation Tool
+
+This tool is only for use with this specific book. It is custom made, and as
+such it has very limited use outside of its very limited scope. Not
+recommended for use by others.
+"""
+
+import os
+import shutil
+import sys
 
 def usage():
+    """Prints the usage text.
+    """
     print("./genesis.py #\n")
-    print("Creates a new folder, copies skeleton files into it, and modifies them accordingly.")
+    print("Creates a new folder, copies skeleton files into it, and modifies "
+          + "them accordingly.")
 
 def create(number, files, directory, base_directory):
+    """Creation.
+
+    Creates the directory, moves skeleton files into it with their new names,
+    and modifies them appropriately.
+    """
     print("Creating {0}... ".format(directory), end="")
 
     os.mkdir(directory)
@@ -24,23 +41,30 @@ def create(number, files, directory, base_directory):
 
     print("done.")
 
+def main(arguments):
+    """Main entry point
+
+    Determines what the program does.
+    """
+    # represents project number
+    number = arguments[1]
+
+    # configuration
+    base_directory = "/Users/inxiti/code/c/"
+    skeleton_files = [
+        ["Makefile.skeleton", "Makefile"],
+        ["skeleton.c", "ex{0}.c".format(number)]
+    ]
+    directory = "{0}ex{1}/".format(base_directory, number)
+
+    # create project, copy files, and tailor them if directory does not exist
+    if not os.path.exists(directory):
+        create(number, skeleton_files, directory, base_directory)
+    else:
+        print("{0} already exists.".format(directory))
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         usage()
     else:
-        # represents project number
-        number = sys.argv[1]
-
-        # configuration
-        base_directory = "/Users/inxiti/code/c/"
-        files = [
-            ["Makefile.skeleton", "Makefile"],
-            ["skeleton.c", "ex{0}.c".format(number)]
-        ]
-        directory = "{0}ex{1}/".format(base_directory, number)
-
-        # create project, copy files, and tailor them if directory does not exist
-        if not os.path.exists(directory):
-            create(number, files, directory, base_directory)
-        else:
-            print("{0} already exists.".format(directory))
+        main(sys.argv)
