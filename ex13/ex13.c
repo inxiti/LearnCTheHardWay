@@ -47,6 +47,6 @@ int main(int argc, char *argv[]) {
                 printf("%d: %c is not a vowel.\n", i, letter);
         }
     }
-    
+
 	return 0;
 }
