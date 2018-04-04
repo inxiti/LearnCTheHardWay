@@ -3,7 +3,6 @@
 int main(int argc, char *argv[]) {
     if(argc != 2) {
         printf("ERROR: You need one argument.\n");
-
         return 1;
     }
 
@@ -48,5 +47,6 @@ int main(int argc, char *argv[]) {
                 printf("%d: %c is not a vowel.\n", i, letter);
         }
     }
+    
 	return 0;
 }
