@@ -6,7 +6,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    for(int i = 0; argv[1][i] != '\0'; ++i) {
+    int i = 0;  // defining a variable within the for loop initialization is
+                // only valid in c99
+    for(i = 0; argv[1][i] != '\0'; ++i) {
         char letter = argv[1][i];
 
         switch(letter) {
