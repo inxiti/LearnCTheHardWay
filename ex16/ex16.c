@@ -38,7 +38,7 @@ void
 Person_print(struct Person* who)
 {
   printf("Name: %s\n", who->name);
-  printf("\tAge: %d\n", who->age);
+  printf("\tAge: %d\n", (*who).age); // -> is syntatic sugar for (*ptr).member
   printf("\tHeight: %d\n", who->height);
   printf("\tWeight: %d\n", who->weight);
 }
