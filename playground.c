@@ -13,6 +13,8 @@
 
     value-at-func-function(arg) is essentially what happens, a normal
     function call.
+
+    TODO: fopen/fclose a file to check it for garbage
  */
 
 // includes
