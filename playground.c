@@ -50,27 +50,36 @@ func2(int* param)
   *param = 22222;
 }
 
+void
+test_file_creation() {
+  FILE *fp;
+  fp = fopen("tmp_file", "w+");
+  fprintf(fp, "test, test, test\n");
+  fclose(fp);
+}
+
 // main
 int
 main()
 {
-  char* str = "Hello, world.";
+  test_file_creation();
+  // char* str = "Hello, world.";
 
-  // pass a function and a string to func
-  func(&print_message, str);
+  // // pass a function and a string to func
+  // func(&print_message, str);
 
-  int x = 11111;
-  int* ptr = &x;
+  // int x = 11111;
+  // int* ptr = &x;
 
-  // showing addresses
-  printf("ptr addy is  : %p\n", (void*)&ptr); // pass address of ptr itself
-  printf("ptr points to: %p\n", (void*)ptr);
-  printf("x address is : %p\n", (void*)&x);
+  // // showing addresses
+  // printf("ptr addy is  : %p\n", (void*)&ptr); // pass address of ptr itself
+  // printf("ptr points to: %p\n", (void*)ptr);
+  // printf("x address is : %p\n", (void*)&x);
 
-  // before and after values, demonstrating the memory is the same
-  printf("\nx before: %d\n", *ptr);
-  func2(ptr);
-  printf("x after : %d\n", *ptr);
+  // // before and after values, demonstrating the memory is the same
+  // printf("\nx before: %d\n", *ptr);
+  // func2(ptr);
+  // printf("x after : %d\n", *ptr);
 
   return 0;
 }
