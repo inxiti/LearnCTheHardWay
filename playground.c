@@ -14,7 +14,10 @@
     value-at-func-function(arg) is essentially what happens, a normal
     function call.
 
-    TODO: fopen/fclose a file to check it for garbage
+    passing func and &func to a function expecting a function pointer works
+    because they are equivalent in c. functions are not first class in c, and
+    as such function names serve as address-of(& operator) in this context,
+    when not invoked.
  */
 
 // includes
@@ -25,7 +28,8 @@ void
 func(int (*printer)(char*), char* str)
 {
   // invoke the pointed to function with the appropriate argument
-  if ((*printer)(str) == 0) {
+  // if((*printer)(str) == 0) { // the same as below?
+  if (printer(str) == 0) {
     printf("Message printed successfully.\n\n");
   } else {
     printf("Message printed unsuccessfully.\n\n");
@@ -62,11 +66,12 @@ test_file_creation() {
 int
 main()
 {
-  test_file_creation();
-  // char* str = "Hello, world.";
+  // test_file_creation();
+  char* str = "Hello, world.";
 
   // // pass a function and a string to func
-  // func(&print_message, str);
+  func(print_message, str);
+  // func(&print_message, str); // the same as above? how/why?
 
   // int x = 11111;
   // int* ptr = &x;
