@@ -53,7 +53,8 @@ def main(arguments):
     base_directory = "/Users/inxiti/code/c/"
     skeleton_files = [
         ["Makefile.skeleton", "Makefile"],
-        ["skeleton.c", "ex{0}.c".format(number)]
+        ["skeleton.c", "ex{0}.c".format(number)],
+        ["dbg.h", "dbg.h"]
     ]
     directory = "{0}ex{1}/".format(base_directory, number)
 
