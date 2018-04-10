@@ -1,5 +1,4 @@
-#ifndef __dbg_h__
-#define __dbg_h__
+#pragma once
 
 #include <stdio.h>
 #include <errno.h>
@@ -24,5 +23,3 @@
 #define sentinel(M, ...) { log_err(M, ##__VA_ARGS__); errno=0; goto error; }
 
 #define check_mem(A) check((A), "Out of memory.") #define check_debug(A, M, ...) if(!(A)) { debug(M, ##__VA_ARGS__); errno=0; go to error; }
-
-#endif
