@@ -5,6 +5,9 @@
 // defines the value of THE_SIZE to be 1000, this is it's initial value,
 // thus when accessed in ex22_main.c it is 1000 despite not being defined before
 // being used there in that file.
+
+// using extern and static variables within functions are the way to create
+// globals within c
 int THE_SIZE = 1000;
 
 // global static means file visibility only
@@ -24,7 +27,8 @@ double update_ratio(double new_ratio)
 {
     // function scope static means the value is saved even after the function
     // completes it's invocation
-    static double ratio = 1.0;
+    static double ratio = 1.0;  // try to avoid this however. huge pain in
+                                // concurrent programs/threading
 
     double old_ratio = ratio;
     ratio = new_ratio;

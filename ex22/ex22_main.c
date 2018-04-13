@@ -8,8 +8,8 @@ void scope_demo(int count)
     log_info("count is: %d", count);
 
     if (count > 10) {
-        // likely to cause bugs because of naming/scoping... i think?
-        int count = 100; // BAD! BUGS!
+        // likely to cause bugs because of naming/scoping
+        int count = 100; // BAD! BUGS! NEVER shadow variables(same names)
 
         log_info("count in this scope is: %d", count);
     }
