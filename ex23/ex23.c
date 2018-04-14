@@ -15,6 +15,22 @@ int normal_copy(char *from, char *to, int count)
 
 int duffs_device(char *from, char *to, int count)
 {
+	{
+		int n = (count + 7) / 8;
+
+		switch (count % 8) {
+			case 0: do { *to++ = *from++;
+					case 7: *to++ = *from++;
+					case 6: *to++ = *from++;
+					case 5: *to++ = *from++;
+					case 4: *to++ = *from++;
+					case 3: *to++ = *from++;
+					case 2: *to++ = *from++;
+					case 1: *to++ = *from++;
+				} while (--n > 0);
+		}
+	}
+
 	return count;
 }
 
@@ -30,7 +46,7 @@ int valid_copy(char *data, int count, char expects)
 	for(i = 0; i < count; i++) {
 		if (data[i] != expects) {
 			log_err("[%d] %c != %c", i, data[i], expects);
-			
+
 			return 0;
 		}
 	}
@@ -38,7 +54,7 @@ int valid_copy(char *data, int count, char expects)
 	return 1;
 }
 
-int main(int argc, char *argv[]) {
+int main() {
 
 
 	return 0;
