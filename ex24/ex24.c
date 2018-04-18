@@ -21,7 +21,9 @@ typedef struct Person {
 } Person;
 
 int main(int argc, char *argv[]) {
-
+	Person you = {.age = 0};
+	int i = 0;
+	char *in = NULL;
 
 	return 0;
 }
