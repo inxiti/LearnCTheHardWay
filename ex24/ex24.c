@@ -1,3 +1,5 @@
+// Extra credit: remove uses of fscanf, use functions similar to atoi
+// to convert from string to integer, etc
 #include <stdio.h>
 #include "dbg.h"
 
