@@ -35,7 +35,7 @@ int main() {
 
 	printf("How old are you? ");
 	int rc = fscanf(stdin, "%d", &you.age);
-	check(rc > 0, "Yuo have to enter a number.");
+	check(rc > 0, "You have to enter a number.");
 
 	printf("What color are your eyes:\n");
 	for(i = 0; i <= OTHER_EYES; i++) {
