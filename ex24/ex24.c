@@ -1,6 +1,7 @@
 // includes
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dbg.h"
 
 #define MAX_DATA 100
@@ -23,6 +24,13 @@ typedef struct Person {
 	float income;
 } Person;
 
+void trim_newline(char *str)
+{
+	size_t length = strlen(str) - 1;
+
+	if (str[length] == '\n') { str[length] = '\0'; }
+}
+
 // begin
 int main() {
 	Person you = {.age = 0};
@@ -36,10 +44,12 @@ int main() {
 	printf("What's your first name? ");
 	in = fgets(you.first_name, MAX_DATA-1, stdin);
 	check(in != NULL, "Failed to read first name.");
+	trim_newline(you.first_name);
 
 	printf("What's your last name? ");
 	in = fgets(you.last_name, MAX_DATA-1, stdin);
 	check(in != NULL, "Failed to read last name.");
+	trim_newline(you.last_name);
 
 	printf("How old are you? ");
 	you.age = atoi(fgets(buffer, MAX_DATA-1, stdin));
@@ -65,8 +75,8 @@ int main() {
 	 * display results, formatted with tabs
 	 */
 	printf("----- RESULTS -----\n");
-	printf("First Name: \t%s", you.first_name);
-	printf("Last Name: \t%s", you.last_name);
+	printf("First Name: \t%s\n", you.first_name);
+	printf("Last Name: \t%s\n", you.last_name);
 	printf("Age: \t\t%d\n", you.age);
 	printf("Eyes: \t\t%s\n", EYE_COLOR_NAMES[you.eyes]);
 	printf("Income: \t$%.2f/hour\n", you.income);
