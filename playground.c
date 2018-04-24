@@ -22,6 +22,11 @@
 
 // includes
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "dbg.h"
+
+#define MAX_DATA 100
 
 // functions
 void
@@ -62,15 +67,16 @@ test_file_creation() {
   fclose(fp);
 }
 
+
 // main
 int
 main()
 {
   // test_file_creation();
-  char* str = "Hello, world.";
+  // char* str = "Hello, world.";
 
   // // pass a function and a string to func
-  func(print_message, str);
+  // func(print_message, str);
   // func(&print_message, str); // the same as above? how/why?
 
   // int x = 11111;
@@ -87,4 +93,7 @@ main()
   // printf("x after : %d\n", *ptr);
 
   return 0;
+  
+error:
+  return -1;
 }
