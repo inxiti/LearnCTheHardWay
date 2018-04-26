@@ -5,6 +5,12 @@
 
 #define MAX_DATA 100
 
+// custom printf
+int cprintf(const char *fmt, ...)
+{
+	
+}
+
 int read_string(char **out_string, int max_buffer)
 {
 	*out_string = calloc(1, max_buffer + 1);
