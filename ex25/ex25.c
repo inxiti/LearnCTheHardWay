@@ -8,7 +8,9 @@
 // custom printf
 int cprintf(const char *fmt, ...)
 {
-	
+	return 0; 
+error:
+	return -1;	
 }
 
 int read_string(char **out_string, int max_buffer)
