@@ -8,6 +8,7 @@
 // custom printf
 int cprintf(const char *fmt, ...)
 {
+	// TODO: accept variable amount of args, print accordingly
 	return 0; 
 error:
 	return -1;	
