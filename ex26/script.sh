@@ -1,7 +1,11 @@
 #!/bin/bash
+#
+
+# variables
 BASE_DIRECTORY=~/code/c/ex26
 TMP_DIRECTORY=~/code/c/ex26/tmp
 
+# begin
 set -e
 
 # make, and go somewhere safe
