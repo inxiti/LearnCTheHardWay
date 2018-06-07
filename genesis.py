@@ -50,7 +50,7 @@ def main(arguments):
     number = arguments[1]
 
     # configuration
-    base_directory = "/Users/inxiti/code/c/"
+    base_directory = "/Users/inxiti/code/LearnCTheHardWay/"
     skeleton_files = [
         ["Makefile.skeleton", "Makefile"],
         ["skeleton.c", "ex{0}.c".format(number)],
