@@ -1,3 +1,4 @@
+# TODO: update prefix
 PREFIX?=/usr/local
 CFLAGS=-Wall -g -I${PREFIX}/apr/include/apr-1 -I${PREFIX}/apr/include/apr-util-1
 LDFLAGS=-L${PREFIX}/apr/lib -lapr-1 -pthread -laprutil-1
