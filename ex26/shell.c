@@ -4,7 +4,15 @@
 
 int Shell_exec(Shell template, ...)
 {
+    apr_pool_t *p = NULL;
 
+    return rc;
+error:
+    if (p) {
+        apr_pool_destroy(p);
+    }
+
+    return rc;
 }
 
 int Shell_run(apr_pool_t *p, Shell *cmd)
