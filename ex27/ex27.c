@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <assert.h>
 #include <stdio.h>
 #include "dbg.h"
@@ -67,7 +68,7 @@ int main(int argc, char *argv[])
     check(to[to_len - 1] == '\0', "String not terminated.");
 
     return 0;
-    
+
 error:
     return 1;
 }
